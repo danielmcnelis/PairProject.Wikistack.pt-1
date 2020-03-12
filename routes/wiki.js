@@ -25,16 +25,18 @@ router.post('/', async(req, res, next) => {
             status: req.body.status
         }
         
-        let user = await User.findOrCreate({
-            where: userData
-        });
+        let page = await new Page(pageData)  
 
-        let page = await new Page(pageData)
-        
-        page.setAuthor = user;
-        
+        let [user] = await User.findOrCreate({
+            where: userData
+        })
+       
+        console.log(page)
+
         await user.save();
         await page.save();
+        await page.setAuthor(user.id);
+
         res.redirect(`/wiki/${page.slug}`);
 
     } catch(err) {
@@ -51,20 +53,23 @@ router.get('/add', async (req, res, next) => {
 })
 
 router.get('/:slug', async(req, res, next) => {
-    let [page] = await Page.findAll({
-        where : {
-        slug: req.params.slug
-        }
-    })
+    try {
+        let [page] = await Page.findAll({
+            where : {
+            slug: req.params.slug
+            }
+        }) 
 
-    res.send(wikipage(page))
+        let [author] = await User.findAll({
+            where : {
+            id: page.authorId
+            }
+        }) 
+        
+        res.send(wikipage(page, author))
+    } catch (err) {
+        next(err)
+    }    
 })
-
-
-
-
-
-
-
 
 module.exports = router
