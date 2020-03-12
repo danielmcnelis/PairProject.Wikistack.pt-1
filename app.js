@@ -27,7 +27,7 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/wiki', wikiRoutes);
-app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 
 const init = async () => {
   await models.db.sync()
