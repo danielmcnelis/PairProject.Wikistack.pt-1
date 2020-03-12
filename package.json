@@ -39,6 +39,7 @@
     "forwarded": "^0.1.2",
     "fresh": "^0.5.2",
     "has-flag": "^3.0.0",
+    "html-template-tag": "^3.2.0",
     "http-errors": "^1.7.3",
     "iconv-lite": "^0.4.24",
     "inherits": "^2.0.3",
@@ -91,8 +92,11 @@
     "vary": "^1.1.2",
     "wrappy": "^1.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
   "scripts": {
+    "start": "nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
