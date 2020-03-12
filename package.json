@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "wikistack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "morgan": "^1.9.1"
-  }
-=======
   "name": "pairproject.wikistack-pt1",
   "version": "1.0.0",
   "description": "",
@@ -76,6 +61,8 @@
     "once": "^1.4.0",
     "parseurl": "^1.3.3",
     "path-to-regexp": "^0.1.7",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
     "pino": "^5.17.0",
     "pino-http": "^4.4.0",
     "pino-pretty": "^3.6.1",
@@ -91,6 +78,7 @@
     "safe-buffer": "^5.1.2",
     "safer-buffer": "^2.1.2",
     "send": "^0.17.1",
+    "sequelize": "^5.21.5",
     "serve-static": "^1.14.1",
     "setprototypeof": "^1.1.1",
     "sonic-boom": "^0.7.7",
@@ -116,5 +104,4 @@
   },
   "author": "",
   "license": "ISC"
->>>>>>> 833aa87069ee0e733f6169157b63a342280a042e
 }
