@@ -6,18 +6,34 @@ module.exports = (page, author) => layout(html`
   <hr>
   <form method="POST" action="/wiki/${page.slug}">
 
-    <div>PLACEHOLDER FOR AUTHOR NAME FIELD</div>
-    
-    <div>PLACEHOLDER FOR AUTHOR EMAIL FIELD</div>
+    <div class="form-group">
+      <label for="authorName" class="col-sm-2 control-label">Author Name</label>
+      <div class="col-sm-10">
+        <input id="authorName" name="authorName" type="text" class="form-control" value="${author.name}"/>
+      </div>
+    </div>   
+        
+    <div class="form-group">
+      <label for="authorEmail" class="col-sm-2 control-label">Author Email</label>
+      <div class="col-sm-10">
+        <input id="authorEmail" name="authorEmail" type="text" class="form-control" value="${author.email}"/>
+      </div>
+    </div>
 
     <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Page Title</label>
       <div class="col-sm-10">
-        <input name="title" type="text" class="form-control" value="${page.title}"/>
+        <input id="title" type="text" class="form-control" value="${page.title}"/>
       </div>
     </div>
 
-    <div>PLACEHOLDER FOR PAGE CONTENT TEXTAREA FIELD</div>
+    <div class="form-group">
+      <label for="content" class="col-sm-2 control-label">Page Content</label>
+      <div class="col-sm-10">
+        <input id="content" type="text" class="form-control" value="${page.content}"/>
+      </div>
+    </div>
+
 
     <div class="form-group">
       <label for="content" class="col-sm-2 control-label">Status</label>
